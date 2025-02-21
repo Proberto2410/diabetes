@@ -1,18 +1,20 @@
 # Heart Attack Prediction
 
-Este projeto prevê a probabilidade de um ataque cardíaco em 10 anos com base em vários indicadores de saúde.
 
-## Estrutura do Projeto
+465 / 5 000
+This project predicts the probability of a heart attack in 10 years based on several health indicators.
 
-- `notebooks/heart_analysis.ipynb`: Notebook usado para treinar o modelo.
-- `models/fhs_rf_model.pkl`: Modelo treinado salvo.
-- `src/streamlit_fhs.py`: Script Streamlit para previsões.
-- `run_streamlit.py`: Script para iniciar o Streamlit.
-- `requirements.txt`: Arquivo de dependências.
+## Project Structure
 
-## Como Executar
+- `notebooks/heart_analysis.ipynb`: Notebook used to train the model.
+- `models/fhs_rf_model.pkl`: Trained model saved.
+- `src/streamlit_fhs.py`: Streamlit script for predictions.
+- `run_streamlit.py`: Script to start Streamlit.
+- `requirements.txt`: Dependencies file.
 
-1. Clone o repositório:
+## How to Run
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/seu-usuario/heart-attack-prediction.git
    cd heart-attack-prediction
