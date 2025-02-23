@@ -1,3 +1,5 @@
+setuptools
+wheel
 numpy
 scikit-learn==1.0.2
 matplotlib
