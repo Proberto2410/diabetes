@@ -7,3 +7,4 @@ seaborn
 streamlit==1.23.0
 joblib==1.2.0
 pandas==1.5.3
+distutils
