@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import numpy as np
 import os
 
 # Título da aplicação
@@ -11,20 +12,20 @@ col1, col2, col3 = st.columns(3)
 
 # Entradas do usuário
 gender = col1.selectbox("Enter your gender", ["Male", "Female"])
-age = col2.number_input("Enter your age", min_value=0, max_value=120, value=30)
+age = col2.number_input("Enter your age", min_value=0, max_value=120)
 education = col3.selectbox("Highest academic qualification", ["High school diploma", "Undergraduate degree", "Postgraduate degree", "PhD"])
 isSmoker = col1.selectbox("Are you currently a smoker?", ["Yes", "No"])
-yearsSmoking = col2.number_input("Number of daily cigarettes", min_value=0, value=0)
+yearsSmoking = col2.number_input("Number of daily cigarettes", min_value=0)
 BPMeds = col3.selectbox("Are you currently on BP medication?", ["Yes", "No"])
 stroke = col1.selectbox("Have you ever experienced a stroke?", ["Yes", "No"])
 hyp = col2.selectbox("Do you have hypertension?", ["Yes", "No"])
 diabetes = col3.selectbox("Do you have diabetes?", ["Yes", "No"])
-chol = col1.number_input("Enter your cholesterol level", min_value=0, value=300)
-sys_bp = col2.number_input("Enter your systolic blood pressure", min_value=0, value=150)
-dia_bp = col3.number_input("Enter your diastolic blood pressure", min_value=0, value=90)
-bmi = col1.number_input("Enter your BMI", min_value=0.0, value=25.0)
-heart_rate = col2.number_input("Enter your resting heart rate", min_value=0, value=80)
-glucose = col3.number_input("Enter your glucose level", min_value=0, value=150)
+chol = col1.number_input("Enter your cholesterol level", min_value=0)
+sys_bp = col2.number_input("Enter your systolic blood pressure", min_value=0)
+dia_bp = col3.number_input("Enter your diastolic blood pressure", min_value=0)
+bmi = col1.number_input("Enter your BMI", min_value=0.0)
+heart_rate = col2.number_input("Enter your resting heart rate", min_value=0)
+glucose = col3.number_input("Enter your glucose level", min_value=0)
 
 # Botão de previsão
 if st.button('Predict'):
@@ -54,17 +55,25 @@ if st.button('Predict'):
 
     df_pred['education'] = df_pred['education'].apply(transform_education)
 
+    # Verificando os dados de entrada
+    st.write("Dados de entrada:")
+    st.write(df_pred)
+
     # Carregando o modelo
-    model_path = os.path.join(os.path.dirname(__file__), 'notebooks', 'fhs_rf_model.pkl')
+    model_path = os.path.join(os.path.dirname(__file__), 'notebooks', 'fhs_lr_model.pkl')
     try:
         model = joblib.load(model_path)
-        st.success("")
+        st.success("Modelo carregado com sucesso.")
     except Exception as e:
-        st.error(f"Error loading model: {e}")
+        st.error(f"Erro ao carregar o modelo: {e}")
         st.stop()
 
     # Fazendo a previsão
     prediction = model.predict(df_pred)
+
+    # Verificando a previsão
+    st.write("Previsão:")
+    st.write(prediction)
 
     # Exibindo o resultado
     if prediction[0] == 0:
