@@ -19,12 +19,12 @@ BPMeds = col3.selectbox("Are you currently on BP medication?", ["Yes", "No"])
 stroke = col1.selectbox("Have you ever experienced a stroke?", ["Yes", "No"])
 hyp = col2.selectbox("Do you have hypertension?", ["Yes", "No"])
 diabetes = col3.selectbox("Do you have diabetes?", ["Yes", "No"])
-chol = col1.number_input("Enter your cholesterol level", min_value=0, value=200)
-sys_bp = col2.number_input("Enter your systolic blood pressure", min_value=0, value=120)
-dia_bp = col3.number_input("Enter your diastolic blood pressure", min_value=0, value=80)
+chol = col1.number_input("Enter your cholesterol level", min_value=0, value=300)
+sys_bp = col2.number_input("Enter your systolic blood pressure", min_value=0, value=150)
+dia_bp = col3.number_input("Enter your diastolic blood pressure", min_value=0, value=90)
 bmi = col1.number_input("Enter your BMI", min_value=0.0, value=25.0)
-heart_rate = col2.number_input("Enter your resting heart rate", min_value=0, value=70)
-glucose = col3.number_input("Enter your glucose level", min_value=0, value=100)
+heart_rate = col2.number_input("Enter your resting heart rate", min_value=0, value=80)
+glucose = col3.number_input("Enter your glucose level", min_value=0, value=150)
 
 # Botão de previsão
 if st.button('Predict'):
@@ -68,7 +68,7 @@ if st.button('Predict'):
 
     # Exibindo o resultado
     if prediction[0] == 0:
-        st.markdown('<p class="big-font">You likely will not develop heart disease in 10 years.</p>', unsafe_allow_html=True)
+        st.markdown('<p class="big-font">You likely WILL NOT develop heart disease in 10 years.</p>', unsafe_allow_html=True)
     else:
         st.markdown('<p class="big-font">You are likely to develop heart disease in 10 years.</p>', unsafe_allow_html=True)
 
