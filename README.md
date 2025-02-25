@@ -1,42 +1,27 @@
-# Heart Attack Prediction
+# Diabetes Prediction Project
 
+The Diabetes prediction dataset is a collection of medical and demographic data from patients, along with their diabetes status (positive or negative). The data includes features such as age, gender, body mass index (BMI), hypertension, heart disease, smoking history, HbA1c level, and blood glucose level. This dataset can be used to build machine learning models to predict diabetes in patients based on their medical history and demographic information.
 
-465 / 5 000
-This project predicts the probability of a heart attack in 10 years based on several health indicators.
+## Features
 
-## Project Structure
+- **Gender**: The biological sex of the individual, which can have an impact on their susceptibility to diabetes.
+- **Age**: An important factor as diabetes is more commonly diagnosed in older adults.
+- **Hypertension**: A medical condition in which the blood pressure in the arteries is persistently elevated.
+- **Heart Disease**: A medical condition that is associated with an increased risk of developing diabetes.
+- **Smoking History**: A risk factor for diabetes and can exacerbate the complications associated with it.
+- **BMI (Body Mass Index)**: A measure of body fat based on weight and height.
+- **HbA1c (Hemoglobin A1c)**: A measure of a person's average blood sugar level over the past 2-3 months.
+- **Blood Glucose Level**: Refers to the amount of glucose in the bloodstream at a given time. High blood glucose levels can indicate diabetes.
 
-- `notebooks/heart_analysis.ipynb`: Notebook used to train the model.
-- `models/fhs_rf_model.pkl`: Trained model saved.
-- `src/streamlit_fhs.py`: Streamlit script for predictions.
-- `run_streamlit.py`: Script to start Streamlit.
-- `requirements.txt`: Dependencies file.
+## Target Variable
 
-## How to Run
+- **Diabetes**: The target variable being predicted. `1` indicates a positive diagnosis for diabetes, and `0` indicates a negative diagnosis.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/seu-usuario/heart-attack-prediction.git
-   cd heart-attack-prediction
- 
+## Running the Application
 
+To run the Streamlit application, first install the required dependencies using the following command:
 
-2. Instale as dependências:
-<pip install -r requirements.txt>
-
-3. Inicie o aplicativo Streamlit:
-<python run_streamlit.py>
-
-4. Abra o navegador e acesse http://localhost:8501 para usar o aplicativo.
-
-heart-attack-prediction/
-├── notebooks/
-│   └── heart_analysis.ipynb  # Notebook usado para treinar o modelo
-├── models/
-│   └── fhs_rf_model.pkl      # Modelo treinado salvo
-├── src/
-│   └── streamlit_fhs.py      # Script Streamlit para previsões
-├── run_streamlit.py          # Script para iniciar o Streamlit
-├── requirements.txt          # Arquivo de dependências
-└── README.md                 # Documentação do projeto
+```sh
+pip install -r requirements.txt
+streamlit run model_dia.py
 
